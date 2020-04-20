@@ -9,17 +9,19 @@ So.. what is *PySport* about?
 
 *Sam Allardyce walks into the video analysis room.. “Morning, I was watching the last Arsenal match and there were a few situations I saw that I thought they would hurt us on Saturday. I want you to find me all of these situations from their last 5 games and find the times in our last 5 matches that we have faced similar situations. Let me have it this afternoon. Thanks” …….“Gaffer, that is going…” Big Sam slams the door “… to take hours… of work”.*
 
-Around Juli 2019 Joe Mulberry created an algoritm to find similar situations based on tracking data. As in most projects the first version is a [jupyter notebook](https://jupyter.org/) to prove it all work. And the code in Joe's notebook did work! But a notebook is not really end-user friendly. To get a product that is usable for end-users you need to follow some steps. Those steps aren't always obvious.
+Around Juli 2019 [Joe Mulberry](https://twitter.com/joe_mulberry) created an algoritm to find similar situations based on tracking data. As in most projects the first version is a [jupyter notebook](https://jupyter.org/) to prove it all work. And the code in Joe's notebook did work! But a notebook is not really end-user friendly. To get a product that is usable for end-users you need to follow some steps. Those steps aren't always obvious.
  
+Timing was right: the new-kid on the block [Koen Vossen](https://twitter.com/mr_le_fox) met Joe while Joe was figuring out how to create a [flask](https://flask.palletsprojects.com/en/1.1.x/) app around the notebook. It seemed hard to connect flask to the notebook. 
+
 >I've come to the realization that notebooks (in whatever language/platform you like) create a tension that is basically impossible to resolve between the level of abstraction you should be exposing in your code, and the level of abstraction required for your prose narrative.
 > &nbsp;
-> -- Thom Lawrence (@lemonwatcher) [August 2019](https://twitter.com/lemonwatcher/status/1159580174062669825)  
+> -- Thom Lawrence - Chief data monkey StatsBomb ([@lemonwatcher](https://twitter.com/lemonwatcher)) [August 2019](https://twitter.com/lemonwatcher/status/1159580174062669825)  
   
-Timing was right and I made contact with Joe while he was figuring out how to create a flask app around the notebook. As Thom already mentioned it's hard to get the right level of abstraction in a notebook. Split the code of the notebook into several files makes deployment harder, and refactoring the code into some separate layers for [infrastructure, domain models/services and application services](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/) will probably never happen in a notebook.
+As Thom mentions it's hard to get the right level of abstraction in a notebook. Splitting the code of the notebook into several files makes it harder to share new versions. And refactoring the code into some separate layers for [infrastructure, domain models/services and application services](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/) will probably never happen in a notebook.
 
-Also in this case the layers were not there yet. We spend a day to go through all the notebook to understand what the code is doing and why. Then the '[refactor](https://en.wikipedia.org/wiki/Code_refactoring) fest' started. Together we added the layers, replaced [pandas](https://pandas.pydata.org/) with [dataclasses](https://docs.python.org/3/library/dataclasses.html) (don't hate me please), inserted a caching layer, added [flask](https://flask.palletsprojects.com/en/1.1.x/) and put it on a [digital ocean droplet](https://www.digitalocean.com/products/droplets/). *At a later stage we changed deployment to [heroku](https://www.heroku.com/) and replaced local storage with [S3](https://aws.amazon.com/s3/)*
+Also in Joe's case the layers weren't there yet. We spend a day to go through all the notebook to understand what the code was doing and why. Then the '[refactor](https://en.wikipedia.org/wiki/Code_refactoring) fest' started. Together we added the layers, replaced [pandas](https://pandas.pydata.org/) with [dataclasses](https://docs.python.org/3/library/dataclasses.html) (don't hate me please), inserted a caching layer, added [flask-restfull](https://flask-restful.readthedocs.io/en/latest/) and put it on a [digital ocean droplet](https://www.digitalocean.com/products/droplets/). *At a later stage we changed deployment to [heroku](https://www.heroku.com/) and replaced local storage with [S3](https://aws.amazon.com/s3/)*
 
-We used [React](https://reactjs.org/) as frontend network and deployed it using [AWS Amplify](https://aws.amazon.com/amplify/).
+We used [React](https://reactjs.org/) as frontend framework and deployed it using [AWS Amplify](https://aws.amazon.com/amplify/).
 
 The result: [SituSearch by Analyst+](https://analyst.plus). 
 
@@ -27,12 +29,14 @@ The result: [SituSearch by Analyst+](https://analyst.plus).
 
 
 ## Picking the right tool
-In software development it's always hard to find our which tools are right for the job. Should we use [Spark](https://spark.apache.org/)? Or Pandas? Or regular python objects?
+In software development it's always hard to find out which tools are right for the job. Should we use [Spark](https://spark.apache.org/)? Or Pandas? Or regular python objects?
 
 ### Pandas for loading?
-At first it looked like Pandas was the right tool. To get the right data a lot of jugling was needed and Pandas can do that. But the nested nature of [TRACAB](https://chyronhego.com/products/sports-tracking/tracab-optical-tracking/) data (Frame with Players, Positions, etc) is not a natural fit for Pandas. The [MultiIndex](https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html) could be an option but it doesn't feel right.
+The first version of SituSearch operated on ChyronHego's [TRACAB](https://chyronhego.com/products/sports-tracking/tracab-optical-tracking/) tracking files.
 
-In the case of SituSearch pandas wasn't the best tool for the job. Most work is done during parsing the TRACAB file. Parsing such a file in Pandas will probably look like 
+At first it looked like Pandas was the right tool. To load the right data from the files a lot of jugling was needed and Pandas can do that. But the nested nature of TRACAB data (Frame with Players, Positions, etc) is not a natural fit for Pandas. The [MultiIndex](https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html) could be an option but it doesn't feel right.
+
+In the case of SituSearch pandas wasn't the best tool for the job. Most work is done during parsing the TRACAB file. Parsing such a file in Pandas will probably end in looping over all rows and altering columns. An example snippet: 
 ```python
 ball_raw = string_items[2].split(";")[0]
 ball_raw = ball_raw.split(",")
@@ -53,7 +57,7 @@ if remove_officials == True:
 ```
 
 ### Pandas for matching?
-Then the question remains if Pandas is needed for the matching? No. The SituSearch QueryEngine calculates the similarity between the selected frame and all other frames, sorts them and returns top N. The similarity algoritm is tweaked to use a c++ extension. Using a free Heroku dyno (VM) we were able to check 14.000 frames in 5 seconds (0,36ms/frame)
+Then the question remains if Pandas is needed for the matching? No. The SituSearch QueryEngine calculates the similarity between the selected frame and all other frames, sorts them and returns top N. The similarity algoritm is using c++ extension which is magnitudes faster than Python code. Using a free Heroku dyno (VM) we were able to match against 14.000 frames in less than 5 seconds (0,35ms/frame)
 
 ```python
 def calculate_simularity(frame1: Frame, frame2: Frame) -> float:
@@ -66,6 +70,20 @@ When we load the entire tracking file it takes about 8 seconds to load it into a
 As you might noticed in the code above we use [typehinting](https://www.bernat.tech/the-state-of-type-hints-in-python/). In our case the *easier to reason about the code* was the most important argument. Everywhere in the code we know what kind of object we are passing around. In case of Pandas the only typehint we can use is `DataFrame` which doesn't tell us so much. 
 
 ```python
+from dataclasses import dataclass
+from typing import List
+
+
+@dataclass
+class Period(object):
+    ....
+
+
+@dataclass
+class Frame(object):
+    ....
+
+
 @dataclass
 class DataSet(object):
     frame_rate: int
@@ -78,6 +96,9 @@ class DataSet(object):
 The different classes makes it also possible to use [abstract classes](https://docs.python.org/3.8/library/abc.html) to define interfaces.
 
 ```python
+from abc import ABC
+
+
 class LoaderInterface(ABC):
     @abstractmethod
     def load(self, only_alive: bool = True, sample_rate: float = 1/12) -> DataSet:
@@ -101,6 +122,10 @@ class MetricaLoader(LoaderInterface):
 ```
 
 # So why PySport
-I believe there are a lot people doing great things using Python (or R, or ...) in the sports domain! It's amazing to see that most people were determind to learn how to program, and get all kind of cool stuff working. 
+We believe there are a lot people doing great things using Python (or R, or ...) in the sports domain! It's amazing to see that most people were determind to learn how to program, and get all kind of cool stuff working.
+ 
+>I was in the same position 3 years ago, I had never coded before but was inspired by the public football analytics happening on Twitter and thought.. "I want to do that!"
+> &nbsp;
+> -- FC RSTATS ([@FC_rstats](https://twitter.com/FC_rstats)) [website](http://www.fcrstats.com/)
 
-It would be really cool if I can share knowledge and best practices in the field of software development, applied to sports. 
+It would be really cool if we can share knowledge and best practices in the field of software development, but applied to sports.
