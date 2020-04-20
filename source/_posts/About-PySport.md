@@ -30,27 +30,27 @@ The result: [SituSearch by Analyst+](https://analyst.plus).
 In software development it's always hard to find our which tools are right for the job. Should we use [Spark](https://spark.apache.org/)? Or Pandas? Or regular python objects?
 
 ### Pandas for loading?
-At first it looked like Pandas was the right tool. To get the right data a lot of jugling was needed and Pandas can do that. But the nested nature of TRACAB data (Frame with Players, Positions, etc) is not a natural fit for Pandas. The [MultiIndex](https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html) could be an option but it doesn't feel right.
+At first it looked like Pandas was the right tool. To get the right data a lot of jugling was needed and Pandas can do that. But the nested nature of [TRACAB](https://chyronhego.com/products/sports-tracking/tracab-optical-tracking/) data (Frame with Players, Positions, etc) is not a natural fit for Pandas. The [MultiIndex](https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html) could be an option but it doesn't feel right.
 
 In the case of SituSearch pandas wasn't the best tool for the job. Most work is done during parsing the TRACAB file. Parsing such a file in Pandas will probably look like 
 ```python
-    ball_raw = string_items[2].split(";")[0]
-    ball_raw = ball_raw.split(",")
+ball_raw = string_items[2].split(";")[0]
+ball_raw = ball_raw.split(",")
 
-    frameID.append(frameID_temp)
-    team.append(10)
-    target_id.append(100)
-        
-    ....
-        
-        
-    tdat["y"] = pd.to_numeric(tdat["y"])
-    tdat["z"] = pd.to_numeric(tdat["z"])
+frameID.append(frameID_temp)
+team.append(10)
+target_id.append(100)
+    
+....
+    
+    
+tdat["y"] = pd.to_numeric(tdat["y"])
+tdat["z"] = pd.to_numeric(tdat["z"])
 
-    if remove_officials == True:
-        tdat = tdat[tdat['team'] != 4]
-        tdat = tdat[tdat['team'] != -1]
-``` 
+if remove_officials == True:
+    tdat = tdat[tdat['team'] != 4]
+    tdat = tdat[tdat['team'] != -1]
+```
 
 ### Pandas for matching?
 Then the question remains if Pandas is needed for the matching? No. The SituSearch QueryEngine calculates the similarity between the selected frame and all other frames, sorts them and returns top N. The similarity algoritm is tweaked to use a c++ extension. Using a free Heroku dyno (VM) we were able to check 14.000 frames in 5 seconds (0,36ms/frame)
@@ -59,7 +59,7 @@ Then the question remains if Pandas is needed for the matching? No. The SituSear
 def calculate_simularity(frame1: Frame, frame2: Frame) -> float:
     cost = calculate_cost(frame1, frame2)  # for scipy
     return optimize_cost(cost)  # c++ extension
-``` 
+```
 
 When we load the entire tracking file it takes about 8 seconds to load it into a objects: ready to use. It takes 3 seconds to load into a pandas dataframe (without any parsing done yet). Our implementation of the TRACAB file loader also supports a `sample_rate` argument to take a sample of the file. Loading the same file with a sample rate 1/2 will take 4 seconds.
 
@@ -73,7 +73,7 @@ class DataSet(object):
     pitch_size_height: int
     periods: List[Period]
     frames: List[Frame]
-```  
+```
 
 The different classes makes it also possible to use [abstract classes](https://docs.python.org/3.8/library/abc.html) to define interfaces.
 
@@ -92,12 +92,15 @@ class TRACABLoader(LoaderInterface):
         
 
 # lets add another loader
-# Borrowed from https://github.com/Friends-of-Tracking-Data-FoTD/LaurieOnTracking/blob/master/Metrica_IO.py
 class MetricaLoader(LoaderInterface):
     def __init__(self, tracking_csv_filename: str):
         ....
         
     def load(self, only_alive: bool = True, sample_rate: float = 1/12) -> DataSet:
         ....
-
 ```
+
+# So why PySport
+I believe there are a lot people doing great things using Python (or R, or ...) in the sports domain! It's amazing to see that most people were determind to learn how to program, and get all kind of cool stuff working. 
+
+It would be really cool if I can share knowledge and best practices in the field of software development, applied to sports. 
