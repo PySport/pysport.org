@@ -36,7 +36,7 @@ The first version of SituSearch operated on ChyronHego's [TRACAB](https://chyron
 
 At first it looked like Pandas was the right tool. To load the right data from the files a lot of jugling was needed and Pandas can do that. But the nested nature of TRACAB data (Frame with Players, Positions, etc) is not a natural fit for Pandas. The [MultiIndex](https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html) could be an option but it doesn't feel right.
 
-In the case of SituSearch pandas wasn't the best tool for the job. Most work is done during parsing the TRACAB file. Parsing such a file in Pandas will probably end in looping over all rows and altering columns. An example snippet: 
+In the case of SituSearch pandas wasn't the best tool for the job. Most work is done during parsing the TRACAB file. Parsing such a file in Pandas will probably end in looping over all rows and altering columns. 
 ```python
 ball_raw = string_items[2].split(";")[0]
 ball_raw = ball_raw.split(",")
@@ -55,17 +55,46 @@ if remove_officials == True:
     tdat = tdat[tdat['team'] != 4]
     tdat = tdat[tdat['team'] != -1]
 ```
+Snippet using pandas
+
+```python
+with open(files["data.dat"], "r") as fp:
+    def _iter():
+        n = 0  # can't use enumerate below because of `period.contains(frame_id)` check
+        sample = 1. / sample_rate
+
+        for line in fp.readlines():
+            line = line.strip()
+
+            frame_id = int(line[:10].split(":", 1)[0])
+            if only_alive and not line.endswith("Alive;:"):
+                continue
+
+            for period in periods:
+                if period.contains(frame_id):
+                    if n % sample == 0:
+                        yield period, line
+                    n += 1
+
+    frames = []
+    for period, line in _iter():
+        frame = self._frame_from_line(period, line)
+        frames.append(frame)
+
+```
+Snippet using plain python objects
+
+Lets look at some number: when we load the entire tracking file it takes about 8 seconds to load it into a objects; ready to use. It takes about 3 seconds to load the same file into a pandas dataframe (without any parsing done yet). In our case we didn't need all the frames. Our implementation of the TRACAB file loader also supports a `sample_rate` argument to take a sample of the file. Loading the same file with a sample rate 1/2 will take 4 seconds.
+
 
 ### Pandas for matching?
-Then the question remains if Pandas is needed for the matching? No. The SituSearch QueryEngine calculates the similarity between the selected frame and all other frames, sorts them and returns top N. The similarity algoritm is using c++ extension which is magnitudes faster than Python code. Using a free Heroku dyno (VM) we were able to match against 14.000 frames in less than 5 seconds (0,35ms/frame)
+Then the question remains if Pandas is needed for the matching? No, it's not. The SituSearch QueryEngine calculates the similarity between the selected frame and all other frames, sorts them and returns top N. The similarity algoritm is using c++ extension which is magnitudes faster than Python code. Using a free Heroku dyno (VM) we were able to match against 14.000 frames in less than 5 seconds (0,35ms/frame)
 
 ```python
 def calculate_simularity(frame1: Frame, frame2: Frame) -> float:
     cost = calculate_cost(frame1, frame2)  # for scipy
     return optimize_cost(cost)  # c++ extension
 ```
-
-When we load the entire tracking file it takes about 8 seconds to load it into a objects: ready to use. It takes 3 seconds to load into a pandas dataframe (without any parsing done yet). Our implementation of the TRACAB file loader also supports a `sample_rate` argument to take a sample of the file. Loading the same file with a sample rate 1/2 will take 4 seconds.
 
 As you might noticed in the code above we use [typehinting](https://www.bernat.tech/the-state-of-type-hints-in-python/). In our case the *easier to reason about the code* was the most important argument. Everywhere in the code we know what kind of object we are passing around. In case of Pandas the only typehint we can use is `DataFrame` which doesn't tell us so much. 
 
@@ -122,10 +151,10 @@ class MetricaLoader(LoaderInterface):
 ```
 
 # So why PySport
-We believe there are a lot people doing great things using Python (or R, or ...) in the sports domain! It's amazing to see that most people were determind to learn how to program, and get all kind of cool stuff working.
+We believe there are a lot people doing great things using Python (or R, or ...) in the sports domain! It's amazing to see that most people were determined to learn how to program, and get all kind of cool stuff working.
  
 >I was in the same position 3 years ago, I had never coded before but was inspired by the public football analytics happening on Twitter and thought.. "I want to do that!"
 > &nbsp;
 > -- FC RSTATS ([@FC_rstats](https://twitter.com/FC_rstats)) [website](http://www.fcrstats.com/)
 
-It would be really cool if we can share knowledge and best practices in the field of software development, but applied to sports.
+As we experiences ourselves it's really hard to learn software design principles by yourself. When to apply which pattern is tough. With PySport we want to create an open community where we share all kind of best practices from all kind of domains translated to sport.
