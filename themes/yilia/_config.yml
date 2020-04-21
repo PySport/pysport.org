@@ -58,7 +58,7 @@ top: true
 
 # Miscellaneous
 google_analytics: ''
-favicon: /favicon.png
+favicon: /images/logo.png
 
 #你的头像url
 avatar: /images/logo.svg
