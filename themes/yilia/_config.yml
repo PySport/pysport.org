@@ -2,8 +2,8 @@
 
 menu:
   Home: /
-  Pandas: /categories/pandas/
-  OSS: / categories/oss
+#  Pandas: /categories/pandas/
+#  OSS: / categories/oss
   About: /2020/04/20/About-PySport/
 
 
@@ -63,7 +63,7 @@ favicon: /images/logo.png
 #你的头像url
 avatar: /images/logo.svg
 
-footer: hoi
+footer: Backed by <a href="https://teamtv.co.uk/" target="_blank" noopener><img border="0" height="20px" src="https://teamtv.nl/wp-content/uploads/Asset-2@2x.png" /></a> | <a href="mailto:koen@teamtv.nl">join us</a>
 
 
 # 智能菜单

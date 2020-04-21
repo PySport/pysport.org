@@ -34,9 +34,9 @@ In software development it's always hard to find out which tools are right for t
 ### Pandas for loading?
 The first version of SituSearch operated on ChyronHego's [TRACAB](https://chyronhego.com/products/sports-tracking/tracab-optical-tracking/) tracking files.
 
-At first it looked like Pandas was the right tool. To load the right data from the files a lot of jugling was needed and Pandas can do that. But the nested nature of TRACAB data (Frame with Players, Positions, etc) is not a natural fit for Pandas. The [MultiIndex](https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html) could be an option but it doesn't feel right.
+At first it looked like Pandas was the right tool. To load the right data from the files a lot of jugling was needed and Pandas can do that. There is even a nice [cookbook](https://github.com/FCrSTATS/tracab_cookbook/blob/master/README.md) available. But the nested nature of TRACAB data (Frame with Players, Positions, etc) is not a natural fit for Pandas. The [MultiIndex](https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html) could be an option but it doesn't feel right.
 
-In the case of SituSearch pandas wasn't the best tool for the job. Most work is done during parsing the TRACAB file. Parsing such a file in Pandas will probably end in looping over all rows and altering columns. 
+In the case of SituSearch pandas wasn't the best tool for the job. Most work is done during parsing the TRACAB file. Parsing such a file in Pandas will end in looping over all rows and altering columns. 
 ```python
 ball_raw = string_items[2].split(";")[0]
 ball_raw = ball_raw.split(",")
@@ -110,7 +110,7 @@ with open(files["data.dat"], "r") as fp:
         frames.append(frame)
 
 ```
-Snippet using plain python objects
+Snippet using plain python objects. Side note: our loader is heavy inspired by the FC_RSTATS TRACAB cookbook.
 
 Lets look at some number: when we load the entire tracking file it takes about 8 seconds to load it into a objects; ready to use. It takes about 3 seconds to load the same file into a pandas dataframe (without any parsing done yet). In our case we didn't need all the frames. Our implementation of the TRACAB file loader also supports a *sample_rate* argument to take a sample of the file. Loading the same file with a sample rate 1/2 takes 4 seconds.
 
