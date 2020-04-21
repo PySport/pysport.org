@@ -95,8 +95,11 @@ def calculate_simularity(frame1: Frame, frame2: Frame) -> float:
     cost = calculate_cost(frame1, frame2)  # for scipy
     return optimize_cost(cost)  # c++ extension
 ```
+But what does ": Frame" and "-> float" mean?
 
-As you might noticed in the code above we use [typehinting](https://www.bernat.tech/the-state-of-type-hints-in-python/). In our case the *easier to reason about the code* was the most important argument. Everywhere in the code we know what kind of object we are passing around. In case of Pandas the only typehint we can use is `DataFrame` which doesn't tell us so much. 
+### Typehinting
+
+As you might noticed we added ": Frame" and "-> float". It tells us about what the *type* of the argument should be, and what *type* of return value you can expect. That's called [typehinting](https://www.bernat.tech/the-state-of-type-hints-in-python/) and it provides some benefits. In our case the *easier to reason about the code* was the most important argument. Everywhere in the code we know what kind of object we are passing around. In case of Pandas the only typehint we can use is `DataFrame` which doesn't tell us so much. We would need additional checks inside our functions to make the passed arguments are correct.
 
 ```python
 from dataclasses import dataclass
@@ -121,9 +124,15 @@ class DataSet(object):
     periods: List[Period]
     frames: List[Frame]
 ```
+Snippet of the classes we use in SituSearch.
 
-The different classes makes it also possible to use [abstract classes](https://docs.python.org/3.8/library/abc.html) to define interfaces.
+The different classes makes it also possible to use [abstract classes](https://docs.python.org/3.8/library/abc.html) to define interfaces. The interface defines what methods a class should implement. This makes it easier to add a new loader without thinking about what methods to add. 
+Most IDE's will help you with implementing an interface:
 
+![](/images/metricaloader.png)
+
+
+This will result in:
 ```python
 from abc import ABC
 
@@ -147,8 +156,10 @@ class MetricaLoader(LoaderInterface):
         ....
         
     def load(self, only_alive: bool = True, sample_rate: float = 1/12) -> DataSet:
-        ....
+        pass
 ```
+
+
 
 # So why PySport
 We believe there are a lot people doing great things using Python (or R, or ...) in the sports domain! It's amazing to see that most people were determined to learn how to program, and get all kind of cool stuff working.
