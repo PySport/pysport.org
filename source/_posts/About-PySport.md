@@ -9,7 +9,7 @@ So.. what is *PySport* about?
 
 *Sam Allardyce walks into the video analysis room.. “Morning, I was watching the last Arsenal match and there were a few situations I saw that I thought they would hurt us on Saturday. I want you to find me all of these situations from their last 5 games and find the times in our last 5 matches that we have faced similar situations. Let me have it this afternoon. Thanks” …….“Gaffer, that is going…” Big Sam slams the door “… to take hours… of work”.*
 
-Around Juli 2019 [Joe Mulberry](https://twitter.com/joe_mulberry) created an algoritm to find similar situations based on tracking data. As in most projects the first version is a [jupyter notebook](https://jupyter.org/) to prove it all work. And the code in Joe's notebook did work! But a notebook is not really end-user friendly. To get a product that is usable for end-users you need to follow some steps. Those steps aren't always obvious.
+In July 2019, [Joe Mulberry](https://twitter.com/joe_mulberry) created an algoritm to find similar situations based on tracking data. As in most projects the first version is a [jupyter notebook](https://jupyter.org/) to prove it all work. And the code in Joe's notebook did work! But a notebook is not really end-user friendly. To get a product that is usable for end-users you need to follow some steps. Those steps aren't always obvious.
  
 Timing was right: the new-kid on the block [Koen Vossen](https://twitter.com/mr_le_fox) met Joe while Joe was figuring out how to create a [flask](https://flask.palletsprojects.com/en/1.1.x/) app around the notebook. It seemed hard to connect flask to the notebook. 
 
