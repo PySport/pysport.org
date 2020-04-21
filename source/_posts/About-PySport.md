@@ -1,6 +1,6 @@
 ---
 title: About PySport
-date: 2020-04-20 21:10:45
+date: 2020-04-21 18:00:00
 tags:
 ---
 So.. what is *PySport* about?
@@ -187,6 +187,10 @@ class MetricaLoader(LoaderInterface):
         pass
 ```
 
+This was part 1 in a series of two.
+
+[Part 1: Introduction - this post](/2020/04/21/About-PySport/)
+Part 2: Diving into the tracking data loading library - coming soon
 
 
 # So why PySport
