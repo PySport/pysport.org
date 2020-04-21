@@ -63,7 +63,7 @@ favicon: /images/logo.png
 #你的头像url
 avatar: /images/logo.svg
 
-footer: Sponsored by <a href="https://teamtv.co.uk/" target="_blank" noopener><img border="0" height="20px" src="https://teamtv.nl/wp-content/uploads/Asset-2@2x.png" /></a> | <a href="mailto:koen@teamtv.nl">join us</a>
+footer: Sponsored by <a href="https://teamtv.co.uk/" target="_blank" noopener><img border="0" height="20px" src="/images/teamtv-logo.png" /></a> | <a href="mailto:koen@teamtv.nl">join us</a>
 
 
 # 智能菜单
