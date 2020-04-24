@@ -30,7 +30,7 @@ You will probably have an idea of how much of your time you spend on each step, 
 
 ### Introducing kloppy
 
-We are very proud to announce **kloppy**. This python package enables data scientists or other enthusiasts to start working with two important types of data in soccer analytics: tracking data and event data. **kloppy** makes working with those types of data available for both expert users as beginners. Although the package is still work in progress as shown in the [todo list](https://github.com/PySport/kloppy#todo-list) it already provides end-to-end loading and transforming TRACAB data.
+We are very proud to announce **kloppy**. Originated from the SituSearch code this python package enables data scientists or other enthusiasts to start working with two important types of data in soccer analytics: tracking data and event data. **kloppy** makes working with those types of data available for both expert users as beginners. Although the package is still work in progress as shown in the [todo list](https://github.com/PySport/kloppy#todo-list) it already provides end-to-end loading and transforming TRACAB data.
 
 It's available through PyPi and installable using your favorite package manager. For pip:
 ```sh
@@ -129,13 +129,13 @@ No matter what orientation the input dataset has, the output dataset will have H
 This is just release 0.1 of **kloppy** and a lot needs to be done (*docs and tests please!*) 
 
 We decided to release it already because of two reasons:
-1. We need your feedback! Please submit your feedback at our [issue tracker](https://github.com/PySport/kloppy/issues).
+1. We need your feedback! Please submit your feedback at our [issue tracker](https://github.com/PySport/kloppy/issues) or [PySport twitter](https://twitter.com/PySportOrg).
 2. It has already value. You can play around. We are currently working on some more serializers, prioritized on data availability for the public.  
 
 This was part 2 in a series of two.
 
-[Part 1: Introduction - this post](/2020/04/21/About-PySport/)
-[Part 2: Diving into the tracking data loading library](/2020/04/24/Introducing-kloppy-standardizing-soccer-tracking-and-event-data/)
+[Part 1: About PySport](/2020/04/21/About-PySport/)
+[Part 2: Introducing kloppy: standardizing soccer tracking- and event data - this post](/2020/04/24/Introducing-kloppy-standardizing-soccer-tracking-and-event-data/)
  
 
 

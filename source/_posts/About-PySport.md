@@ -190,8 +190,8 @@ class MetricaLoader(LoaderInterface):
 
 This was part 1 in a series of two.
 
-[Part 1: Introduction - this post](/2020/04/21/About-PySport/)
-[Part 2: Diving into the tracking data loading library](/2020/04/24/Introducing-kloppy-standardizing-soccer-tracking-and-event-data/)
+[Part 1: About PySport - this post](/2020/04/21/About-PySport/)
+[Part 2: Introducing kloppy: standardizing soccer tracking- and event data](/2020/04/24/Introducing-kloppy-standardizing-soccer-tracking-and-event-data/)
 
 
 # So why PySport
