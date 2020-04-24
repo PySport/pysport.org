@@ -22,7 +22,7 @@ I probably missed some work by others.. sorry! Please let me know and I'll add i
 
 ### Loading and parsing should be a commodity
 
-While it's really interesting to write code for deserializing/parsing tracking data it feels a bit like writing a json reader: it's a nice exercise if you have spare time but it should not be part of your daily work. And not only that. Especially for new people it's hard to figure out what all data means and availability of proper documentation is lacking.
+While it's really interesting to write code for deserializing/parsing tracking data it feels a bit like writing a json reader: it's a nice exercise if you have spare time but it should not be part of your daily work. And not only that. Especially for new people it's hard to figure out what all data means and public availability of documentation about the files is lacking.
 
 When we look at a typical data science workflow it will look like this:
 ![datascience workflow](/images/datascience-flow.png)
