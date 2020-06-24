@@ -43,6 +43,7 @@ Did you build something cool and want to share with the world? Please do! Consid
 What makes it easier for people to use your project?
 - Have an intuitive api. Hide complex layers from the end-users. Think about *Roman Reasoning*
 - Provide Examples. Most people learn from examples. They will change them to apply to their use-cases
+- Have tutorials. A tutorial can help people to create their own - more complex - workflow.
 - Add extensive documentation. For most people it won't be the starting point, but in case of issues people will look into it.
 - Make your APIs forgiving. When end-users provide wrong arguments raise helpful exceptions with a pointer to how to solve it.
 - Add a license (once again: ["Listen to Thom Lawrence"](https://twitter.com/lemonwatcher/status/1252970956756332544)). Make it possible for others to actually use it.
