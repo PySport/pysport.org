@@ -77,6 +77,7 @@ And the movement is already started! A very-incomplete list of projects with foc
 
 **American Football**
 - [nflscrapR](https://github.com/maksimhorowitz/nflscrapR) by [Maksim Horowitz](https://twitter.com/bklynmaks), [Ron Yurko](https://twitter.com/Stat_Ron), [Sam Ventura](https://twitter.com/stat_sam) and [Rishav Dutta](https://twitter.com/rishavd64): *R Package for Scraping and Aggregating NFL Data*
+- [nflfastR](https://mrcaseb.github.io/nflfastR/) by [Sebastian Carl](https://twitter.com/mrcaseb) and [Ben Baldwin](https://twitter.com/benbbaldwin): *nflfastR is a set of functions to efficiently scrape NFL play-by-play data*
 
 **Hockey**
 - [hockey_scraper](https://github.com/HarryShomer/Hockey-Scraper)🐍 by [Harry Shomer](https://github.com/HarryShomer): *This package is designed to allow people to scrape both NHL data*
