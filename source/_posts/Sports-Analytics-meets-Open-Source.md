@@ -1,6 +1,6 @@
 ---
 title: Sports Analytics meets Open Source
-date: 2020-06-22 22:33:27
+date: 2020-06-25 09:03:10
 tags:
 ---
 > **PySport** supports a community where **everyone** can become better in (applying) **sports analytics**. Everyone in the community shares the common passion: sports analytics. **Sharing knowledge** and **teaching/learning** are core-values of the community. PySport brings experts and learners together and encourages the creation and maintenance of **high-quality open-source** projects, that can be used for end-users development and learning.
