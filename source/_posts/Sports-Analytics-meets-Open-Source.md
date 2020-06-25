@@ -61,7 +61,7 @@ What if you want to contribute but not sure how? There are some nice guides arou
 
 
 ### What's already out there?
-And the movement is already started! A non-complete list of projects with focus on plug-n-play
+And the movement is already started! A very-incomplete list of projects with focus on plug-n-play
 
 **Soccer**
 - [football-packing](https://github.com/samirak93/Football-packing)🐍 by [Samira Kumar](https://twitter.com/Samirak93): *calculate the packing metric for a given pass* 
@@ -79,6 +79,7 @@ And the movement is already started! A non-complete list of projects with focus 
 - [nflscrapR](https://github.com/maksimhorowitz/nflscrapR) by [Maksim Horowitz](https://twitter.com/bklynmaks), [Ron Yurko](https://twitter.com/Stat_Ron), [Sam Ventura](https://twitter.com/stat_sam) and [Rishav Dutta](https://twitter.com/rishavd64): *R Package for Scraping and Aggregating NFL Data*
 
 **Hockey**
+- [hockey_scraper](https://github.com/HarryShomer/Hockey-Scraper)🐍 by [Harry Shomer](https://github.com/HarryShomer): *This package is designed to allow people to scrape both NHL data*
 
 
 ### Next steps
