@@ -90,9 +90,10 @@ And the movement is already started! A very-incomplete list of projects with foc
 - [socceraction](https://github.com/ML-KULeuven/socceraction)🐍 by [Tom Decroos](https://twitter.com/TomDecroos), [Lotte Bransen](https://twitter.com/LotteBransen), [Jan van Haaren](https://twitter.com/JanVanHaaren) and [Jesse Davis](https://twitter.com/jessejdavis1): *Convert existing soccer event stream data to SPADL and value player actions*
 - [soccergraphR](https://github.com/Jelagmil/soccergraphR)🇷 by [Jesús Lagos](https://twitter.com/Vdot_Spain): *The soccergraphR library is designed for all those who work with OPTA data*
 - [soccermatics](https://github.com/JoGall/soccermatics)🇷 by [Joe Gallagher](https://twitter.com/joedgallagher): *soccermatics provides tools to visualise spatial tracking and event data from football (soccer) matches*
+- [statsbomb](https://github.com/imrankhan17/statsbomb-parser)🐍 by [Imran Khan](https://github.com/imrankhan17): *Convert competitions/matches/lineups/events JSON data released by StatsBomb into easy-to-use CSV format.*
 - [statsbombapi](https://github.com/Torvaney/statsbombapi)🐍 by [Ben Torvaney](https://twitter.com/Torvaney): *Statsbomb API with Dataclasses*
 - [statsbombpy](https://github.com/statsbomb/statsbombpy)🐍 by [StatsBomb](https://twitter.com/StatsBomb): *This repository is a Python package to easily stream StatsBomb data into Python*
-- [StatsBombR](https://github.com/statsbomb/StatsBombR)🇷 by [StatsBomb](https://twitter.com/StatsBomb): *This repository is an R package to easily stream StatsBomb data into R* 
+- [StatsBombR](https://github.com/statsbomb/StatsBombR)🇷 by [StatsBomb](https://twitter.com/StatsBomb): *This repository is an R package to easily stream StatsBomb data into R*
 - [tyrone_mings](https://github.com/FCrSTATS/tyrone_mings)🐍 by [FC Rstats](https://twitter.com/FC_rstats): *scraper for transfermarkt*
 
 
