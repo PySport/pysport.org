@@ -4,7 +4,8 @@ menu:
   Home: /
 #  Pandas: /categories/pandas/
 #  OSS: / categories/oss
-  About: /2020/04/21/About-PySport/
+  OpenSource: https://opensource.pysport.org/
+  About: /2020/06/25/sports-analytics-meets-open-source/
 
 
 # SubNav

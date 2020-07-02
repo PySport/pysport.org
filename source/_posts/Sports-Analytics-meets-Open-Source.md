@@ -62,40 +62,9 @@ What if you want to contribute but not sure how? There are some nice guides arou
 
 <a name="list"></a>
 ### What's already out there?
-And the movement is already started! A very-incomplete list of projects with focus on plug-n-play
+And the movement is already started! 
 
-**American Football**
-- [nflfastR](https://mrcaseb.github.io/nflfastR/)🇷 by [Sebastian Carl](https://twitter.com/mrcaseb) and [Ben Baldwin](https://twitter.com/benbbaldwin): *nflfastR is a set of functions to efficiently scrape NFL play-by-play data*
-- [nflscrapR](https://github.com/maksimhorowitz/nflscrapR)🇷 by [Maksim Horowitz](https://twitter.com/bklynmaks), [Ron Yurko](https://twitter.com/Stat_Ron), [Sam Ventura](https://twitter.com/stat_sam) and [Rishav Dutta](https://twitter.com/rishavd64): *R Package for Scraping and Aggregating NFL Data*
-
-
-**Australian Football**
-- [fitzRoy](https://github.com/jimmyday12/fitzRoy)🇷 by [James Day](https://twitter.com/jamesday87): *The goal of fitzRoy is to provide a set of functions that allows for users to easily get access to AFL data from sources such as afltables.com and footywire.com.*
-
-
-**Basketball**
-- [py_ball](https://github.com/basketballrelativity/py_ball)🐍 by [py_ball](https://twitter.com/py_ball_): *Python API wrapper for stats.nba.com with a focus on NBA and WNBA applications*
-
-
-**Hockey**
-- [Evolving all](https://github.com/evolvingwild/hockey-all)🇷 by [EvolvingWild](https://twitter.com/evolvingwild): *All things hockey related*
-- [Evolving scraper](https://github.com/evolvingwild/evolving-hockey)🇷 by [EvolvingWild](https://twitter.com/evolvingwild): *The sc.scrape_pbp function is used to scrape one or more games from the NHL's publicly available data.*
-- [hockey_scraper](https://github.com/HarryShomer/Hockey-Scraper)🐍 by [Harry Shomer](https://github.com/HarryShomer): *This package is designed to allow people to scrape both NHL data*
-
-
-**Soccer**
-- [football-packing](https://github.com/samirak93/Football-packing)🐍 by [Samira Kumar](https://twitter.com/Samirak93): *calculate the packing metric for a given pass* 
-- [kloppy](https://github.com/pySport/kloppy)🐍 by [Koen Vossen](https://twitter.com/mr_le_fox): *standardizing soccer tracking- and event data*
-- [mplsoccer](https://github.com/andrewRowlinson/mplsoccer)🐍 by [Andy Rowlinon](https://twitter.com/numberstorm): *library for drawing soccer/football pitches in Matplotlib and loading StatsBomb open-data*
-- [socceraction](https://github.com/ML-KULeuven/socceraction)🐍 by [Tom Decroos](https://twitter.com/TomDecroos), [Lotte Bransen](https://twitter.com/LotteBransen), [Jan van Haaren](https://twitter.com/JanVanHaaren) and [Jesse Davis](https://twitter.com/jessejdavis1): *Convert existing soccer event stream data to SPADL and value player actions*
-- [soccergraphR](https://github.com/Jelagmil/soccergraphR)🇷 by [Jesús Lagos](https://twitter.com/Vdot_Spain): *The soccergraphR library is designed for all those who work with OPTA data*
-- [soccermatics](https://github.com/JoGall/soccermatics)🇷 by [Joe Gallagher](https://twitter.com/joedgallagher): *soccermatics provides tools to visualise spatial tracking and event data from football (soccer) matches*
-- [statsbomb](https://github.com/imrankhan17/statsbomb-parser)🐍 by [Imran Khan](https://github.com/imrankhan17): *Convert competitions/matches/lineups/events JSON data released by StatsBomb into easy-to-use CSV format.*
-- [statsbombapi](https://github.com/Torvaney/statsbombapi)🐍 by [Ben Torvaney](https://twitter.com/Torvaney): *Statsbomb API with Dataclasses*
-- [statsbombpy](https://github.com/statsbomb/statsbombpy)🐍 by [StatsBomb](https://twitter.com/StatsBomb): *This repository is a Python package to easily stream StatsBomb data into Python*
-- [StatsBombR](https://github.com/statsbomb/StatsBombR)🇷 by [StatsBomb](https://twitter.com/StatsBomb): *This repository is an R package to easily stream StatsBomb data into R*
-- [tyrone_mings](https://github.com/FCrSTATS/tyrone_mings)🐍 by [FC Rstats](https://twitter.com/FC_rstats): *scraper for transfermarkt*
-
+Check out the [Open Source Sports Analytics overview](https://opensource.pysport.org/)!
 
 ### Next steps
 In April we had a [poll on twitter](https://twitter.com/PySportOrg/status/1253221832074895360) and almost 60% of the respondents wanted to do something for the community. That's great! Our next step will be to:
