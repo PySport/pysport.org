@@ -147,7 +147,7 @@ function App() {
                             <p>Secretary at PySport</p>
                             <p>Sports Analytics Consultant &<br/>
                                 Start-up Advisor at UnravelSports <br/>
-                                Data Analytics at U.S. Soccer Federatio
+                                Data Analytics at U.S. Soccer Federation
                             </p>
                             <a target={"_blank"} href={'https://www.linkedin.com/in/joris-bekkers-33138288/'}><LinkedInLogo/></a>
                         </div>

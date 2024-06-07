@@ -13,7 +13,7 @@ export const Header = () => {
                         Analytics</h1>
                     <div className="pb-4"></div>
                     <div className="button-group">
-                        <a className={'button button-white mx-2'} href={"https://github.com/pysport"}>
+                        <a className={'button button-white mx-2 mt-2'} href={"https://github.com/pysport"}>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_1154_289)">
@@ -30,7 +30,7 @@ export const Header = () => {
                             </svg>
                             Github</a>
 
-                        <a className={'button button-white mx-2'} href={"https://www.linkedin.com/company/pysport/"}>
+                        <a className={'button button-white mx-2 mt-2'} href={"https://www.linkedin.com/company/pysport/"}>
                             <LinkedInLogo></LinkedInLogo>
                             LinkedIn</a>
                         <a className={'button button-white mx-2 mt-2'} target={"_blank"} href={"https://x.com/PySportOrg"}>
