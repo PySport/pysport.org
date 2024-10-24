@@ -105,6 +105,12 @@ body {
   margin: auto;
   z-index: 1;
   position: relative;
+  .header--small &{
+    padding: 4rem 0 4rem 0;
+    @include media-breakpoint-down(md){
+      padding-top: 2rem;
+    }
+  }
 }
 
 
@@ -165,6 +171,17 @@ body {
   background-size: cover;
   padding-bottom:8rem;
   z-index: 1;
+  &.header--small{
+    @include media-breakpoint-down(md){
+      padding-top: 1rem;
+      padding-bottom:1rem;
+
+      img{
+        max-width: 175px;
+      }
+    }
+  }
+
 }
 .header__end{
   position: absolute;
@@ -395,4 +412,12 @@ canvas{
   margin: 2rem auto;
   @extend %font-display;
   color: $color-blue;
+}
+
+.text-content{
+
+  line-height: 1.5;;
+  p+p{
+    margin-top: 2rem;
+  }
 }

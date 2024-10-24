@@ -1,0 +1,54 @@
+{
+  "homepage": {
+    "section1": {
+      "title": "Samen Bouwen",
+      "description": "Werk je aan iets gaafs? Deel het met de wereld! Zoek naar gerelateerde projecten om je werk te integreren, of start een nieuw open-source project.",
+      "button": "Open source"
+    },
+    "section2": {
+      "title": "De gemeenschap samenbrengen",
+      "description": "Wij geloven dat samenwerking de beste ideeën oplevert. Daarom organiseren we regelmatig meetups voor onze community. Sluit aan om te netwerken, te leren van experts en je inzichten en projecten te delen.",
+      "button": "Meetups"
+    },
+    "section3": {
+      "title": "Sporten samenbrengen",
+      "description": "Onze visie benadrukt samenwerking tussen verschillende sporten. We geloven in de kracht van samenwerking om sportoverstijgende innovatie te stimuleren, door oplossingen van de ene sport toe te passen op een andere om de impact te maximaliseren."
+    },
+    "mission": {
+      "title": "Onze missie",
+      "quote": "HET VERENIGEN VAN GEBRUIKERS, ONDERZOEKERS, STUDENTEN EN LIEFHEBBERS OM BEST PRACTICES UIT DE INDUSTRIE TE DELEN EN IDEEËN UIT TE WISSELEN OM OPEN-SOURCE SPORTANALYSE VOORUIT TE HELPEN"
+    },
+    "nonProfit": {
+      "title": "Non-profit",
+      "description": "Ondersteun adoptie, (betaalde) ontwikkeling, onderhoud en verbetering van documentatie van open-source sportanalysepakketten."
+    },
+    "meetups": {
+      "title": "Meetups & conferenties",
+      "description": "Geïnteresseerd in het organiseren van een meetup of het hosten van een PySport conferentie?",
+      "button": "Contacteer ons"
+    },
+    "organisation": {
+      "title": "Organisatie",
+      "koenVossen": {
+        "name": "Koen Vossen",
+        "title": "Oprichter & Voorzitter van PySport",
+        "description": "Mede-oprichter & CTO bij TeamTV. Kloppy Onderhouder. Hoofdcoach van een Korfbalteam."
+      },
+      "koenRaad": {
+        "name": "Koen de Raad",
+        "title": "Penningmeester bij PySport",
+        "description": "Mede-oprichter van Eyedle & SPADE. PyData Organisator."
+      },
+      "jorisBekkers": {
+        "name": "Joris Bekkers",
+        "title": "Secretaris bij PySport",
+        "description": "Sportanalyse Consultant. Start-up Adviseur bij UnravelSports. Data-analist bij U.S. Soccer Federation."
+      }
+    }
+  },
+  "footer": {
+    "helpMessage": "Als je ons wilt helpen onze doelen te bereiken, of het nu door te doneren, een bijeenkomst te organiseren of bij te dragen is, neem dan contact met ons op!",
+    "contactEmail": "Info@pysport.org",
+    "visionMessage": "Onze visie zegt niets over een type sport. Dat is met opzet. We geloven dat we voortdurend moeten blijven zoeken naar mogelijkheden om een oplossing van sport A naar sport B toe te passen. Wanneer we creatief beginnen te zijn en nadenken over hoe we oplossingen van de ene sport naar de andere kunnen toepassen, is de impact van die innovaties veel groter. Hierdoor is het publiek groter en is de kans groter dat iemand slimme toepassingen bedenkt."
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "homepage": {
+    "section1": {
+      "title": "Building Together",
+      "description": "Did you build something cool? Share it with the world! Look for related projects to integrate your work, or start a new open-source project.",
+      "button": "Open source"
+    },
+    "section2": {
+      "title": "Bringing the community together",
+      "description": "We believe collaboration sparks the best ideas. That's why we host regular meetups for our sports analytics community. Join us to connect, learn from experts, and share your insights and projects.",
+      "button": "Meetups"
+    },
+    "section3": {
+      "title": "Bringing sports together",
+      "description": "Our vision emphasizes collaboration across all sports. We believe in the power of working together to drive cross-sport innovation, applying solutions from one sport to another to maximize impact."
+    },
+    "mission": {
+      "title": "Our mission",
+      "quote": "UNITE PRACTITIONERS RESEARCHERS LEARNERS ENTHUSIASTS TO SHARE INDUSTRY BEST PRACTICES AND EXCHANGE IDEAS TO ADVANCE OPEN-SOURCE SPORTS ANALYTICS COMMUNITY"
+    },
+    "nonProfit": {
+      "title": "Non Profit",
+      "description": "Support adoption, (paid) development, maintenance and improving documentation of open-source sports analytics packages."
+    },
+    "meetups": {
+      "title": "Meetups & conferences",
+      "description": "Interested in organising a meetup or hosting a PySport conference?",
+      "button": "Contact us"
+    },
+    "organisation": {
+      "title": "Organisation",
+      "koenVossen": {
+        "name": "Koen Vossen",
+        "title": "Founder & President of PySport",
+        "description": "Co-Founder & CTO at TeamTV. Kloppy Maintainer. Head-coach of a Korfball team."
+      },
+      "koenRaad": {
+        "name": "Koen de Raad",
+        "title": "Treasurer at PySport",
+        "description": "Co-Founder at Eyedle & SPADE. PyData Organiser."
+      },
+      "jorisBekkers": {
+        "name": "Joris Bekkers",
+        "title": "Secretary at PySport",
+        "description": "Sports Analytics Consultant. Start-up Advisor at UnravelSports. Data Analytics at U.S. Soccer Federation."
+      }
+    }
+  },
+  "footer": {
+    "helpMessage": "If you want to help us reach our goals, either by donating, hosting a meetup or contributing please reach out to us!",
+    "contactEmail": "Info@pysport.org",
+    "visionMessage": "Our vision doesn’t say anything about a type of sports. That’s by intention. We believe we should keep looking for opportunities to apply a solution from sport A to sport B. When we start being creative and think about how to apply solutions from one sport to another the impact of those innovations is way bigger. As a result the audience is bigger and the chances are higher someone will come up with smart applications."
+  }
+}
