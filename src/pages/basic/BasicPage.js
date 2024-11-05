@@ -1,5 +1,7 @@
 import content from './content.json'
 import contentNL from './content_nl.json'
+import contentMD_NL from './content_nl.md';
+
 import {useLocation, useMatch, useOutlet, useParams} from "react-router-dom";
 import {PageNotFound} from "./PageNotFound";
 import {useTranslation} from "react-i18next";
