@@ -16,13 +16,12 @@ i18n.use(initReactI18next).init({
             translation: nl
         },
     },
+    supportedLngs:['en','nl'],
     lng: 'en', // Default language
     fallbackLng: 'en', // Fallback language when the selected one is not available
     interpolation: {
         escapeValue: false // React already escapes values, so no need to do it again
     }
 });
-
-window.i18n = i18n;
 
 export default i18n;
