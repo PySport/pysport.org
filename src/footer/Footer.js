@@ -44,6 +44,7 @@ export const Footer = () => {
                     <div className="row">
                         <div className="col-md-4 py-4">
                             <p className={'text-white'}>{t('footer.helpMessage')}</p>
+                            <p className={'text-white'}>RSIN: 866294211</p>
                             <a className={'text-white'} href={"mailto:info@pysport.org"}>{t('footer.contactEmail')}</a>
                         </div>
 
