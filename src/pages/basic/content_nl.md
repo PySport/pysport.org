@@ -60,4 +60,14 @@ Op dit moment heeft PySport geen betaalde medewerkers. In de toekomst kunnen ext
 2. **Meetup Londen (2024):** Samenkomst van professionals uit de sportdata-analysewereld met presentaties en netwerkmogelijkheden.
 3. **PyData Eindhoven (2024):** Deelname aan een conferentie met sprekers van PySport over onderwerpen zoals wielrenprestaties, data-infrastructuur in het voetbal en tennis.
 
+## 6. Additionele informatie
+
+Naam en RSIN of fiscaal nummer: PySport, 866294211
+
+Contactgegevens: PySport, gevestigd in Nederland. E-mail: info@pysport.org.
+
+Bestuurssamenstelling:
+- Koen Vossen - Oprichter en Voorzitter
+- Koen de Raad - Penningmeester
+- Joris Bekkers - Secretaris
 
