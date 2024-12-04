@@ -3,6 +3,7 @@ import { Image } from "react-bootstrap";
 import { useTranslation } from 'react-i18next';
 import logo from "../logo.svg";
 import { LinkedInLogo } from "../linkedInLogo";
+import {Donate} from "../donate/donate";
 
 export const Footer = () => {
     const { t } = useTranslation(); // Get the translation function
@@ -44,8 +45,11 @@ export const Footer = () => {
                     <div className="row">
                         <div className="col-md-4 py-4">
                             <p className={'text-white'}>{t('footer.helpMessage')}</p>
-                            <p className={'text-white'}>RSIN: 866294211</p>
+                            <div className="py-2">
+                                <Donate inverted={true}/>
+                            </div>
                             <a className={'text-white'} href={"mailto:info@pysport.org"}>{t('footer.contactEmail')}</a>
+                            <p className={'text-white'}>RSIN: 866294211</p>
                         </div>
 
                         <div className="col-md-4 py-4">
