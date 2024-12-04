@@ -4,6 +4,7 @@ import Brand from '../brand.svg';
 import {useTranslation} from "react-i18next";
 import contentNL from "../pages/basic/content_nl.json";
 import {useNavigate} from "react-router-dom";
+import {Donate} from "../donate/donate";
 
 export const Navigation = () => {
     const {t, i18n} = useTranslation();
@@ -37,6 +38,7 @@ export const Navigation = () => {
                     </div>
                 </Navbar.Brand>
 
+
                 {/* Language dropdown for language selection */}
                 <NavDropdown title={i18n.language.toUpperCase()} id="language-dropdown" className={'me-md-3 me-auto'}>
                     <NavDropdown.Item className={i18n.language === 'en'?'active': ''} onClick={() => changeLanguage('en')}>EN</NavDropdown.Item>
@@ -50,14 +52,21 @@ export const Navigation = () => {
                         <Offcanvas.Title id="offcanvasNavbarLabel-expand">
                             Pysport
                         </Offcanvas.Title>
+
                     </Offcanvas.Header>
                     <Offcanvas.Body>
+                        <div className="py-4 d-sm-none">
+                            <Donate/>
+                        </div>
                         <Nav className="me-auto">
                             <Nav.Link href={`${languagePrefix}/`}>Home</Nav.Link>
                             {Links}
                         </Nav>
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
+                <div className="ml-auto d-none d-md-block">
+                    <Donate/>
+                </div>
 
             </Container>
 
