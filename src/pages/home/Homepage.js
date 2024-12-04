@@ -1,12 +1,13 @@
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 import koenv from "../../members/koenv.jpg";
-import { LinkedInLogo } from "../../linkedInLogo";
+import {LinkedInLogo} from "../../linkedInLogo";
 import koenr from "../../members/koenr.jpg";
 import jorisb from "../../members/jorisb.jpg";
-import logo from "../../logo.svg";
+
+import {Donate} from "../../donate/donate";
 
 export const Homepage = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     return (
         <>
@@ -68,6 +69,7 @@ export const Homepage = () => {
                             <div className="block">
                                 <h2>{t("homepage.nonProfit.title")}</h2>
                                 <p>{t("homepage.nonProfit.description")}</p>
+                                <Donate/>
                             </div>
                         </div>
                         <div className="col-lg-6 pb-4">
@@ -93,11 +95,11 @@ export const Homepage = () => {
                         </h2>
                         <div className="col-lg-4 pb-4">
                             <div className="block">
-                <span style={{ fontSize: "7rem" }} className={"digit"}>
+                <span style={{fontSize: "7rem"}} className={"digit"}>
                   KV
                 </span>
                                 <img
-                                    style={{ width: "150px", margin: "0 auto 12px" }}
+                                    style={{width: "150px", margin: "0 auto 12px"}}
                                     className={"img-fluid rounded-circle"}
                                     src={koenv}
                                 />
@@ -108,17 +110,17 @@ export const Homepage = () => {
                                     target={"_blank"}
                                     href={"https://www.linkedin.com/in/koen-vossen-85902b7/"}
                                 >
-                                    <LinkedInLogo />
+                                    <LinkedInLogo/>
                                 </a>
                             </div>
                         </div>
                         <div className="col-lg-4 pb-4">
                             <div className="block">
-                <span style={{ fontSize: "7rem" }} className={"digit"}>
+                <span style={{fontSize: "7rem"}} className={"digit"}>
                   KR
                 </span>
                                 <img
-                                    style={{ width: "150px", margin: "0 auto 12px" }}
+                                    style={{width: "150px", margin: "0 auto 12px"}}
                                     className={"img-fluid rounded-circle"}
                                     src={koenr}
                                 />
@@ -129,17 +131,17 @@ export const Homepage = () => {
                                     target={"_blank"}
                                     href={"https://www.linkedin.com/in/koen-de-raad/"}
                                 >
-                                    <LinkedInLogo />
+                                    <LinkedInLogo/>
                                 </a>
                             </div>
                         </div>
                         <div className="col-lg-4 pb-4">
                             <div className="block">
-                <span style={{ fontSize: "7rem" }} className={"digit"}>
+                <span style={{fontSize: "7rem"}} className={"digit"}>
                   JB
                 </span>
                                 <img
-                                    style={{ width: "150px", margin: "0 auto 12px" }}
+                                    style={{width: "150px", margin: "0 auto 12px"}}
                                     className={"img-fluid rounded-circle"}
                                     src={jorisb}
                                 />
@@ -150,7 +152,7 @@ export const Homepage = () => {
                                     target={"_blank"}
                                     href={"https://www.linkedin.com/in/joris-bekkers-33138288/"}
                                 >
-                                    <LinkedInLogo />
+                                    <LinkedInLogo/>
                                 </a>
                             </div>
                         </div>
