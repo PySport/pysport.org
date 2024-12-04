@@ -1,6 +1,7 @@
 import logo from '../logo.svg';
 import {LinkedInLogo} from "../linkedInLogo";
 import {useLocation} from "react-router-dom";
+import {Donate} from "../donate/donate";
 
 
 export const Header = () => {
@@ -17,6 +18,9 @@ export const Header = () => {
                         <div className="pb-4"></div>
                         <h1 className={'main-heading'}>Uniting Passion, Knowledge and Open-Source Innovation in Sports
                             Analytics</h1>
+                        <div className="pt-4">
+                            <Donate />
+                        </div>
                         <div className="pb-4"></div>
                         <div className="button-group">
                             <a className={'button button-white mx-2 mt-2'} href={"https://github.com/pysport"}>
@@ -51,6 +55,7 @@ export const Header = () => {
                                 </svg>
                                 X
                             </a>
+
 
 
 
